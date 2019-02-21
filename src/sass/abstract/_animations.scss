@@ -1,0 +1,102 @@
+.main-hidden {
+  display: none;
+}
+
+.main__container--input {
+  transition: padding 0.5s, border-bottom 0.5s linear;
+  &:focus {
+    border-bottom: 1px $color-text-golden solid;
+    &::placeholder {
+      color: $color-text-golden;
+    }
+  }
+  &-active {
+    border-bottom: 1px $color-text-golden solid;
+    &::placeholder {
+      color: $color-text-golden;
+    }
+  }
+}
+
+.main__container--proceed-visible {
+  box-shadow: 0 0 0 0 rgba($color-back-green, 0.5);
+  animation: fadeIn 1s ease-in, pulse 1.5s infinite;
+}
+
+.user__main--time,
+.user__main--container,
+.user__main--subheader,
+.todoList__container--item {
+  animation: opacity 1s ease-in;
+}
+
+.todoList__container--item-done,
+.todoList__container--wrap-add {
+  &:hover {
+    transition: all 0.5s;
+    transform: scale(1.1);
+  }
+}
+
+.todoList__container--wrap-input {
+  transition: border-bottom 0.5s linear;
+  &:focus {
+    border-bottom: 2px $color-back-white solid;
+    &::placeholder {
+      color: $color-text-white;
+    }
+  }
+  &-active {
+    border-bottom: 2px $color-back-white solid;
+    &::placeholder {
+      color: $color-text-white;
+    }
+  }
+}
+
+.todoList__container--error-visible {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes pulse {
+  0% {
+    translate: transform(scale(0.9));
+  }
+  70% {
+    translate: transform(scale(1));
+    box-shadow: 0 0 0 15px rgba($color-back-green, 0);
+  }
+  100% {
+    translate: transform(scale(0.9));
+    box-shadow: 0 0 0 0 rgba($color-back-green, 0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 1;
+    display: block;
+  }
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

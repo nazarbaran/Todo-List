@@ -1,0 +1,60 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  //defines 1 rem
+  font-size: 62.5%;
+
+  @media (max-width: 87.5em) {
+    font-size: 55%;
+  }
+
+  @media (max-width: 77.5em) {
+    font-size: 50%;
+    .user__main--time {
+      margin-top: 25%;
+    }
+    .todoList__header--amount {
+      font-size: 2.2rem;
+    }
+  }
+
+  @media (max-width: 62.5em) {
+    font-size: 45%;
+    .todoList {
+      width: 28%;
+    }
+  }
+
+  @media (max-width: 26.5em) {
+    font-size: 35%;
+    .user {
+      flex-direction: column;
+      &__main {
+        height: 60%;
+        width: 100%;
+      }
+      .todoList {
+        width: 100%;
+        height: 40%;
+      }
+      .user__main--subheader-img {
+        display: none;
+      }
+    }
+  }
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+#root {
+  height: 100vh;
+  color: $color-text-white;
+}

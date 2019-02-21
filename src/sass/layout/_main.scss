@@ -1,0 +1,66 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: $color-text-white;
+  height: 100%;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-back-dark, 0.5),
+      rgba($color-back-dark, 0.5)
+    ),
+    url(../assets/userBackground.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  &__header {
+    display: flex;
+    align-items: flex-end;
+    &--img {
+      height: 6.5rem;
+    }
+    &--text {
+      font-size: 4rem;
+      text-transform: uppercase;
+      font-weight: 500;
+      letter-spacing: 2px;
+      margin-left: 2rem;
+    }
+  }
+  &__subheader {
+    margin: 3rem 0;
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 1px;
+  }
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45%;
+    &--input {
+      width: 60%;
+      background-color: transparent;
+      border: none;
+      border-bottom: 1px solid $color-back-white;
+      color: $color-text-white;
+      outline: none;
+      padding: 1rem 0rem;
+      font-size: 2.6rem;
+      &::placeholder {
+        color: $color-text-white;
+      }
+    }
+    &--proceed {
+      visibility: hidden;
+      height: 3rem;
+      border-radius: 100px;
+      &-visible {
+        height: 3rem;
+        border-radius: 100px;
+        cursor: pointer;
+      }
+    }
+  }
+}

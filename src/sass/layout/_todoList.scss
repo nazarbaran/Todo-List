@@ -1,0 +1,78 @@
+.todoList {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  background-color: $color-back-dark;
+  color: $color-text-gray;
+  -webkit-box-shadow: -8px 10px 30px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -8px 10px 30px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: -8px 10px 30px 0px rgba(0, 0, 0, 0.75);
+  &__empty {
+    text-align: center;
+    padding: 1rem 2rem;
+    font-size: 2.6rem;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+  }
+  &__header {
+    text-align: center;
+    padding: 1rem 2rem;
+    -webkit-box-shadow: 1px 0px 22px 1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 1px 0px 22px 1px rgba(0, 0, 0, 0.75);
+    box-shadow: 1px 0px 22px 1px rgba(0, 0, 0, 0.75);
+    &--amount {
+      font-size: 2.6rem;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+    }
+  }
+  &__container {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 2rem;
+    &--item {
+      padding: 1rem 0rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      &-done {
+        height: 3rem;
+        cursor: pointer;
+      }
+      &-text {
+        font-size: 3rem;
+      }
+    }
+    &--error {
+      display: none;
+      &-visible {
+        display: block;
+        color: $color-text-red;
+        font-size: 1.6rem;
+      }
+    }
+    &--wrap {
+      display: flex;
+      align-items: center;
+      margin-top: 2rem;
+      &-input {
+        flex-basis: 95%;
+        background-color: transparent;
+        border: none;
+        border-bottom: 2px solid $color-text-inactive;
+        color: $color-text-white;
+        outline: none;
+        padding: 1rem 0rem;
+        font-size: 2rem;
+        &::placeholder {
+          color: $color-text-inactive;
+        }
+      }
+
+      &-add {
+        height: 2.4rem;
+        cursor: pointer;
+      }
+    }
+  }
+}
