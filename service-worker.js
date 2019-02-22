@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/nazarbaran/Todo-List.git/precache-manifest.18f0a1c4f31ac1fe6ae57908363cf676.js"
+  "/Todo-List/precache-manifest.0480c101446e2fc669c824165a07ea56.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/nazarbaran/Todo-List.git/index.html", {
+workbox.routing.registerNavigationRoute("/Todo-List/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });
