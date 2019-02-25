@@ -7,9 +7,16 @@ class TodoList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      List: JSON.parse(localStorage.getItem("List")) || [],
-      item: "",
-      itemError: false
+      List: JSON.parse(localStorage.getItem("List")) || [
+        {
+          item: "",
+          time: ""
+        }
+      ],
+      item:"",
+      time:"",
+      editedItem: "",
+      itemError: false,
     };
   }
 
@@ -21,26 +28,44 @@ class TodoList extends React.Component {
     });
   };
 
-  addTodo = async () => {
-    const { item } = this.state;
+  // itemChange = (e) => {
+  //   const editedItem = e.target.value;
+  //   this.setState({
+  //     item : editedItem
+  //   })
+  // }
+
+  addTodo = () => {
+    const item = this.state.item;
+    const currentTime = new Date(),
+    time = currentTime.getHours() + ":" + currentTime.getMinutes();
     if (item.length === 0) {
       this.setState({ itemError: true });
     } else {
       const localList = JSON.parse(localStorage.getItem("List"));
-
-      if (localList.length === 0) {
+      if (localList.length < 0) {
         localStorage.setItem("List", JSON.stringify([item]));
       } else {
-        localList.push(item);
+        localList.push({item,time});
         localStorage.setItem("List", JSON.stringify(localList));
       }
-      await this.setState(prevState => ({
-        List: [...prevState.List, item],
+      this.setState(({
+        List: localList,
         item: "",
         itemError: false
       }));
     }
   };
+
+  // editTodo = index => {
+  //   const localList = JSON.parse(localStorage.getItem("List"));
+  //   console.log(localList[index].item)
+  //   localList[index].item = this.state.item;
+  //   localStorage.setItem("List", JSON.stringify(localList));
+  //   this.setState({
+  //     List: localList
+  //   });
+  // };
 
   removeTodo = index => {
     const localList = JSON.parse(localStorage.getItem("List"));
@@ -52,15 +77,19 @@ class TodoList extends React.Component {
   };
 
   render() {
-    const ListItems = this.state.List.map((item, index) => {
-      return (
+    const ListItems = this.state.List.map((todo,index) => {
+      return(
         <TodoItem
-          item={item}
+          item={todo.item}
+          time={todo.time}
           List={this.state.List}
+          // editedItem={this.state.editedItem}
+          // editTodo={this.editTodo.bind(this, index)}
+          onChange={this.itemChange}
           removeTodo={this.removeTodo.bind(this, index)}
           key={index}
         />
-      );
+      )
     });
     if (this.state.List.length === 0) {
       return (

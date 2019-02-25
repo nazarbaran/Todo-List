@@ -1,7 +1,8 @@
 {
-  "name": "botscrew",
+  "name": "todolist",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://nazarbaran.github.io/Todo-List/",
   "dependencies": {
     "gh-pages": "^2.0.1",
     "react": "^16.8.2",
@@ -10,10 +11,10 @@
     "react-scripts": "2.1.5"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -29,6 +30,5 @@
   "devDependencies": {
     "node-sass": "^4.11.0",
     "sass-loader": "^7.1.0"
-  },
-  "homepage": "https://github.com/nazarbaran/Todo-List.git"
+  }
 }

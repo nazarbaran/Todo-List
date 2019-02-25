@@ -35,12 +35,37 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      &-done {
-        height: 3rem;
-        cursor: pointer;
+      &-textwrap{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        &-text {
+          background-color: transparent;
+          outline: none;
+          border: 0;
+          font-size: 3rem;
+          cursor: pointer;
+          width: 100%;
+          color: $color-text-gray;
+        }
+        &-date{
+          align-self: flex-end;
+          padding-right: 2rem;
+          font-size: 1.2rem;
+        }
       }
-      &-text {
-        font-size: 3rem;
+      &-btnwrap{
+        display: flex;
+        &-remove{
+          height: 3rem;
+          cursor: pointer;
+        }
+        &-edit{
+          height: 3rem;
+          cursor: pointer;
+          margin-right: 1rem;
+          display: none;
+        }
       }
     }
     &--error {
