@@ -28,13 +28,6 @@ class TodoList extends React.Component {
     });
   };
 
-  // itemChange = (e) => {
-  //   const editedItem = e.target.value;
-  //   this.setState({
-  //     item : editedItem
-  //   })
-  // }
-
   addTodo = () => {
     const item = this.state.item;
     const currentTime = new Date(),
@@ -57,16 +50,6 @@ class TodoList extends React.Component {
     }
   };
 
-  // editTodo = index => {
-  //   const localList = JSON.parse(localStorage.getItem("List"));
-  //   console.log(localList[index].item)
-  //   localList[index].item = this.state.item;
-  //   localStorage.setItem("List", JSON.stringify(localList));
-  //   this.setState({
-  //     List: localList
-  //   });
-  // };
-
   removeTodo = index => {
     const localList = JSON.parse(localStorage.getItem("List"));
     localList.splice(index, 1);
@@ -83,8 +66,6 @@ class TodoList extends React.Component {
           item={todo.item}
           time={todo.time}
           List={this.state.List}
-          // editedItem={this.state.editedItem}
-          // editTodo={this.editTodo.bind(this, index)}
           onChange={this.itemChange}
           removeTodo={this.removeTodo.bind(this, index)}
           key={index}

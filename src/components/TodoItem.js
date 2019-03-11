@@ -1,7 +1,6 @@
 import React from "react";
 
 import close from "../assets/close.svg";
-import edit from "../assets/edit.svg";
 
 const TodoItem = props => {
   return (
@@ -11,12 +10,6 @@ const TodoItem = props => {
         <span className="todoList__container--item-textwrap-date">Added at {props.time}</span>
       </div>
       <div className="todoList__container--item-btnwrap">
-        <img
-          src={edit}
-          alt=""
-          className="todoList__container--item-btnwrap-edit"
-          onClick={props.editTodo}
-        />
         <img
           src={close}
           alt=""
