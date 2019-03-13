@@ -30,8 +30,10 @@ class TodoList extends React.Component {
 
   addTodo = () => {
     const item = this.state.item;
-    const currentTime = new Date(),
-    time = currentTime.getHours() + ":" + currentTime.getMinutes();
+    const currentTime = new Date()
+    const minutes = ('0'+currentTime.getMinutes()).slice(-2);
+    const time = currentTime.getHours() + ":" + minutes;
+    
     if (item.length === 0) {
       this.setState({ itemError: true });
     } else {
